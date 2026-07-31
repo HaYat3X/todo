@@ -73,4 +73,24 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# todo
+# Task board
+
+NotionのTODO・プロジェクトDBを正本にする、固定パスワード保護付きのタスクボードです。
+
+## Local setup
+
+`.env.example` を `.env` へコピーし、次を設定します。`.env` はGit管理されません。
+
+```dotenv
+NOTION_API_KEY=secret_...
+APP_PASSWORD=ログインに使う固定パスワード
+AUTH_SECRET=ランダムな長い文字列
+```
+
+`NOTION_API_KEY` が未設定のときは、UI確認用のダミーデータで起動します。本番では必ず3つすべてを設定してください。
+
+```bash
+npm run dev
+```
+
+Vercelへ公開するときも同じ3つの環境変数をProduction環境へ設定します。
